@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Withdraw - Smart Cash</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7ff;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* TOP HEADER */
+
+.top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.back-btn{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    cursor:pointer;
+}
+
+.page-title{
+    font-size:24px;
+    font-weight:bold;
+    color:#1565ff;
+}
+
+/* BALANCE CARD */
+
+.balance-card{
+    background:linear-gradient(to right,#1565ff,#004de6);
+    color:white;
+    padding:25px;
+    border-radius:25px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(21,101,255,0.3);
+}
+
+.balance-card p{
+    opacity:0.9;
+    margin-bottom:10px;
+}
+
+.balance-card h1{
+    font-size:38px;
+}
+
+/* FORM */
+
+.withdraw-box{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
+
+.withdraw-box h2{
+    margin-bottom:25px;
+    color:#222;
+}
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:10px;
+    color:#444;
+    font-weight:600;
+}
+
+.input-box{
+    position:relative;
+}
+
+.input-box i{
+    position:absolute;
+    left:15px;
+    top:17px;
+    color:#1565ff;
+}
+
+.input-box input,
+.input-box select{
+    width:100%;
+    padding:16px 16px 16px 50px;
+    border:none;
+    background:#f4f7ff;
+    border-radius:15px;
+    outline:none;
+    font-size:16px;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+    border:2px solid #1565ff;
+}
+
+/* BUTTON */
+
+.withdraw-btn{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(to right,#1565ff,#004de6);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    margin-top:10px;
+}
+
+.withdraw-btn:hover{
+    transform:translateY(-3px);
+    opacity:0.95;
+}
+
+/* QUICK AMOUNT */
+
+.quick-amount{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
+
+.quick-amount button{
+    padding:10px 15px;
+    border:none;
+    border-radius:12px;
+    background:#eef3ff;
+    color:#1565ff;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* SUCCESS POPUP */
+
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    transition:0.3s;
+    z-index:1000;
+    width:320px;
+}
+
+.popup.active{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.popup i{
+    font-size:60px;
+    color:#1565ff;
+    margin-bottom:20px;
+}
+
+.popup h2{
+    margin-bottom:10px;
+}
+
+.popup p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.popup button{
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    background:#1565ff;
+    color:white;
+    cursor:pointer;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    display:none;
+}
+
+.overlay.active{
+    display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+    .balance-card h1{
+        font-size:30px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<div class="top-bar">
+
+    <div class="back-btn"
+         onclick="window.location.href='home.html'">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+    </div>
+
+    <div class="page-title">Withdraw</div>
+
+    <div></div>
+
+</div>
+
+<!-- BALANCE -->
+
+<div class="balance-card">
+
+    <p>Available Balance</p>
+
+    <h1>₦250,000</h1>
+
+</div>
+
+<!-- FORM -->
+
+<div class="withdraw-box">
+
+    <h2>Withdraw Funds</h2>
+
+    <form id="withdrawForm">
+
+        <!-- BANK -->
+
+        <div class="input-group">
+
+            <label>Bank</label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-building-columns"></i>
+
+                <select required>
+                    <option>Select Bank</option>
+                    <option>Opay</option>
+                    <option>Palmpay</option>
+                    <option>Kuda</option>
+                    <option>GTBank</option>
+                    <option>UBA</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- ACCOUNT -->
+
+        <div class="input-group">
+
+            <label>Account Number</label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <input type="text"
+                       placeholder="Enter account number"
+                       required>
+
+            </div>
+
+        </div>
+
+        <!-- AMOUNT -->
+
+        <div class="input-group">
+
+            <label>Amount</label>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-naira-sign"></i>
+
+                <input type="number"
+                       id="amount"
+                       placeholder="Enter amount"
+                       required>
+
+            </div>
+
+        </div>
+
+        <!-- QUICK BUTTONS -->
+
+        <div class="quick-amount">
+
+            <button type="button"
+            onclick="setAmount(5000)">₦5k</button>
+
+            <button type="button"
+            onclick="setAmount(10000)">₦10k</button>
+
+            <button type="button"
+            onclick="setAmount(20000)">₦20k</button>
+
+            <button type="button"
+            onclick="setAmount(50000)">₦50k</button>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button type="submit"
+                class="withdraw-btn">
+
+            Withdraw Now
+
+        </button>
+
+    </form>
+
+</div>
+
+<!-- POPUP -->
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="popup">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <h2>Withdrawal Successful</h2>
+
+    <p>Your withdrawal request has been submitted.</p>
+
+    <button onclick="closePopup()">
+        Continue
+    </button>
+
+</div>
+
+<script>
+
+// QUICK AMOUNT
+
+function setAmount(value){
+
+    document.getElementById("amount").value = value;
+
+}
+
+// FORM SUBMIT
+
+document.getElementById("withdrawForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    document.getElementById("popup")
+    .classList.add("active");
+
+    document.getElementById("overlay")
+    .classList.add("active");
+
+});
+
+// CLOSE POPUP
+
+function closePopup(){
+
+    window.location.href = "home.html";
+
+}
+
+</script>
+
+</body>
+</html>

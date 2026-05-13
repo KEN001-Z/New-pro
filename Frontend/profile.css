@@ -180,3 +180,12 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
 }
+
+.p-action-card{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.p-action-card:hover{
+    transform:translateY(-5px);
+}
