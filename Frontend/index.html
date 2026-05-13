@@ -129,32 +129,59 @@
       }
 
     }
+// LOGIN
+loginForm.addEventListener("submit", function(e) {
 
-    // LOGIN REDIRECT
-    loginForm.addEventListener("submit", function(e) {
+  e.preventDefault();
 
-      e.preventDefault();
+  const phone = document.querySelector("#loginForm input[type='text']").value;
 
-      alert("Login Successful!");
+  const password = document.getElementById("loginPassword").value;
 
-      // Redirect to homepage
-      window.location.href = "welcome page.html";
+  // Get saved account
+  const savedPhone = localStorage.getItem("phone");
 
-    });
+  const savedPassword = localStorage.getItem("password");
 
-    // REGISTER
-    registerForm.addEventListener("submit", function(e) {
+  // Check login
+  if(phone === savedPhone && password === savedPassword){
 
-      e.preventDefault();
+    alert("Login Successful!");
 
-      alert("Registration Successful!");
+    window.location.href = "welcome page.html";
 
-      // Automatically switch to login
-      loginTab.click();
+  } else {
 
-    });
+    alert("Wrong details or account does not exist!");
 
-  </script>
+  }
+
+});
+
+
+// REGISTER
+registerForm.addEventListener("submit", function(e) {
+
+  e.preventDefault();
+
+  const inputs = registerForm.querySelectorAll("input");
+
+  const phone = inputs[1].value;
+
+  const password = document.getElementById("registerPassword").value;
+
+  // Save user details
+  localStorage.setItem("phone", phone);
+
+  localStorage.setItem("password", password);
+
+  alert("Registration Successful!");
+
+  // Switch to login tab
+  loginTab.click();
+
+});
+</script>
 
 </body>
 </html>
