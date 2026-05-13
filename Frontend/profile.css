@@ -1,0 +1,182 @@
+/* --- GLOBAL APP THEME --- */
+:root {
+    --bg: #f8fafc;
+    --primary: #0066ff; /* Your requested Blue */
+    --primary-dark: #0052cc;
+    --dark: #001e4d;
+    --white: #ffffff;
+    --text-light: #94a3b8;
+    --border-color: #f1f5f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body { 
+    background: var(--bg); 
+    display: flex; 
+    justify-content: center; 
+}
+
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px 15px 120px;
+    min-height: 100vh;
+}
+
+/* --- BOTTOM NAVIGATION --- */
+.bottom-nav { 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    max-width: 450px; 
+    background: var(--white); 
+    display: flex; 
+    justify-content: space-around; 
+    padding: 15px 0; 
+    border-top: 1px solid var(--border-color); 
+    z-index: 1000;
+}
+
+.nav-link { text-decoration: none; color: #cbd5e1; text-align: center; }
+.nav-link.active { color: var(--primary); } /* Blue Active Icon */
+.nav-link i { display: block; font-size: 1.2rem; margin-bottom: 3px; }
+.nav-link span { font-size: 0.65rem; font-weight: 600; }
+
+/* --- PROFILE TOP SECTION --- */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.profile-header h1 { font-weight: 800; color: var(--dark); font-size: 1.5rem; }
+
+.settings-icon {
+    background: var(--white);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    color: var(--dark);
+}
+
+.balance-card {
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark)); /* Blue Gradient */
+}
+
+.label-white { font-size: 0.75rem; opacity: 0.9; font-weight: 600; }
+.balance-amount { font-size: 2.8rem; font-weight: 800; margin: 5px 0 20px; }
+
+.user-meta-strip {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    align-items: center;
+}
+
+.mini-avatar { background: rgba(255,255,255,0.2); width: 35px; height: 35px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+
+.profile-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.p-action-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 18px 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid var(--border-color);
+}
+
+.p-icon-circle {
+    background: var(--primary); /* Blue Icons */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+/* --- MENU SECTIONS --- */
+.menu-section { margin-bottom: 25px; }
+
+.section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    color: var(--text-light);
+}
+
+/* Accent lines now in Blue and Dark */
+.cyan-accent { border-left: 4px solid var(--primary); }
+.dark-accent { border-left: 4px solid var(--dark); }
+.green-accent { border-left: 4px solid var(--primary); }
+
+.history-list {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 5px 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid var(--border-color);
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.history-item:last-child { border-bottom: none; }
+
+.cyan-bg { background: var(--primary); color: white; } /* Changed Teal to Blue */
+
+.h-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1rem;
+}
+
+.h-text h4 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+.h-text p { font-size: 0.7rem; color: var(--text-light); }
+
+.arrow-right { color: #e2e8f0; margin-left: auto; font-size: 0.8rem; }
+
+/* Logout */
+.logout-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid #fee2e2;
+    color: #ef4444;
+    padding: 16px;
+    border-radius: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}

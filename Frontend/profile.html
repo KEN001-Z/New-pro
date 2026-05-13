@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Account Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Account Header -->
+        <header class="profile-header">
+            <h1>Account</h1>
+            <div class="settings-icon">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+        </header>
+
+        <!-- Balance Card -->
+        <div class="balance-card">
+            <span class="label-white">Available Balance</span>
+            <h2 class="balance-amount">₦0.00</h2>
+            
+            <div class="user-meta-strip">
+                <div class="meta-left">
+                    <div class="mini-avatar"><i class="fa-solid fa-user"></i></div>
+                    <span></span>
+                </div>
+                <div class="meta-right">
+                    <div class="affiliate-box">
+                        <span></span>
+                        <p></p>
+                    </div>
+                    <i class="fa-regular fa-copy copy-icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Action Buttons -->
+        <div class="profile-actions-grid">
+            <div class="p-action-card">
+                <div class="p-icon-circle"><i class="fa-solid fa-arrow-down"></i></div>
+                <span>Recharge</span>
+            </div>
+            <div class="p-action-card">
+                <div class="p-icon-circle"><i class="fa-solid fa-arrow-up"></i></div>
+                <span>Withdraw</span>
+            </div>
+            <div class="p-action-card">
+                <div class="p-icon-circle"><i class="fa-solid fa-user-plus"></i></div>
+                <span>Invite</span>
+            </div>
+        </div>
+
+        <!-- Financial Center -->
+        <section class="menu-section">
+            <h3 class="section-label cyan-accent">Financial Center</h3>
+            <div class="history-list">
+                <div class="history-item">
+                    <div class="h-icon cyan-bg"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="h-text"><h4>Recharge History</h4><p>View all deposits</p></div>
+                    <i class="fa-solid fa-chevron-right arrow-right"></i>
+                </div>
+                <div class="history-item">
+                    <div class="h-icon cyan-bg"><i class="fa-solid fa-arrow-up"></i></div>
+                    <div class="h-text"><h4>Withdrawal History</h4><p>View all withdrawals</p></div>
+                    <i class="fa-solid fa-chevron-right arrow-right"></i>
+                </div>
+                <div class="history-item">
+                    <div class="h-icon cyan-bg"><i class="fa-solid fa-file-lines"></i></div>
+                    <div class="h-text"><h4>Transactions Report</h4><p>Full activity report</p></div>
+                    <i class="fa-solid fa-chevron-right arrow-right"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Security -->
+        <section class="menu-section">
+            <h3 class="section-label dark-accent">Personal Security</h3>
+            <div class="history-list">
+                <div class="history-item">
+                    <div class="h-icon cyan-bg"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="h-text"><h4>Bank Account</h4><p>Manage payout account</p></div>
+                    <i class="fa-solid fa-chevron-right arrow-right"></i>
+                </div>
+                <div class="history-item">
+                    <div class="h-icon cyan-bg"><i class="fa-solid fa-lock"></i></div>
+                    <div class="h-text"><h4>Change Password</h4><p>Update your security</p></div>
+                    <i class="fa-solid fa-chevron-right arrow-right"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Center -->
+        <section class="menu-section">
+            <h3 class="section-label green-accent">Support Center</h3>
+            <div class="history-list">
+                <div class="history-item">
+                    <div class="h-icon cyan-bg"><i class="fa-brands fa-telegram"></i></div>
+                    <div class="h-text"><h4>Telegram Group</h4><p>Join our community</p></div>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow-right small"></i>
+                </div>
+                <div class="history-item">
+                    <div class="h-icon cyan-bg"><i class="fa-brands fa-telegram"></i></div>
+                    <div class="h-text"><h4>Telegram Channel</h4><p>Join our community</p></div>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow-right small"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logout Button -->
+        <button class="logout-btn">Logout Account</button>
+
+        <!-- Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a href="#" class="nav-link"><i class="fa-solid fa-briefcase"></i><span>My Products</span></a>
+            <a href="team.html" class="nav-link"><i class="fa-solid fa-users"></i><span>Teams</span></a>
+            <a href="profile.html" class="nav-link active"><i class="fa-solid fa-user"></i><span>Profile</span></a>
+        </nav>
+    </div>
+</body>
+</html>
