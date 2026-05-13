@@ -1,0 +1,166 @@
+/* style.css */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f5f7fb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.container{
+  width:100%;
+  max-width:420px;
+  background:white;
+  padding:40px 30px;
+  border-radius:20px;
+  box-shadow:0 5px 25px rgba(0,0,0,0.08);
+}
+
+.logo-box{
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.logo{
+  width:80px;
+  height:80px;
+  border-radius:20px;
+  background:white;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:40px;
+  font-weight:bold;
+  color:#1565ff;
+}
+
+h1{
+  text-align:center;
+  color:#1565ff;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#777;
+  margin-bottom:30px;
+}
+
+.tabs{
+  display:flex;
+  margin-bottom:30px;
+  border-bottom:2px solid #eee;
+}
+
+.tab{
+  flex:1;
+  padding:15px;
+  border:none;
+  background:none;
+  cursor:pointer;
+  font-size:18px;
+  color:#999;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.tab.active{
+  color:#1565ff;
+  border-bottom:3px solid #1565ff;
+}
+
+.form{
+  display:none;
+}
+
+.active-form{
+  display:block;
+}
+
+.form h3{
+  color:#444;
+  margin-bottom:30px;
+  line-height:1.5;
+}
+
+.input-group{
+  margin-bottom:25px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:10px;
+  color:#333;
+  font-weight:600;
+}
+
+.input-group input{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-bottom:2px solid #e5e5e5;
+  outline:none;
+  font-size:16px;
+  background:transparent;
+}
+
+.input-group input:focus{
+  border-color:#1565ff;
+}
+
+.password-box{
+  position:relative;
+}
+
+.toggle{
+  position:absolute;
+  right:10px;
+  top:15px;
+  cursor:pointer;
+  color:#999;
+}
+
+.remember{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:30px;
+  color:#666;
+}
+
+.btn{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:15px;
+  background:linear-gradient(to right,#1e88ff,#004de6);
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:0.95;
+}
+
+@media(max-width:500px){
+
+  .container{
+    padding:30px 20px;
+  }
+
+}

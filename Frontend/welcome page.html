@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome - Smart Cash</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(to right,#1e88ff,#004de6);
+      color:white;
+      text-align:center;
+    }
+
+    .welcome-box{
+      animation:fadeIn 1s ease;
+    }
+
+    h1{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    p{
+      font-size:18px;
+      opacity:0.9;
+    }
+
+    .loader{
+      margin:30px auto;
+      width:50px;
+      height:50px;
+      border:5px solid rgba(255,255,255,0.3);
+      border-top:5px solid white;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="welcome-box">
+
+    <h1>Welcome to Smart Cash</h1>
+
+    <p>Loading your dashboard...</p>
+
+    <div class="loader"></div>
+
+  </div>
+
+  <script>
+
+    // Redirect after 3 seconds
+    setTimeout(() => {
+
+      window.location.href = "home.html";
+
+    }, 3000);
+
+  </script>
+
+</body>
+</html>
